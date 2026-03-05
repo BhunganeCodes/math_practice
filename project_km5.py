@@ -134,7 +134,7 @@ def population_projection(initial_population, growth_rate, years):
     fractional part.
     """
 
-    pass
+    return initial_population * (1 + growth_rate) ** years if growth_rate > 0 else initial_population
 
 
 def months_to_repay_loan(balance, monthly_payment):
