@@ -108,7 +108,13 @@ def max_temperature_rise(temperatures):
     Return the maximum possible increase. If the temperature never rises,
     return 0.
     """
-    pass
+    first_temp = temperatures[0]
+    highest = max(temperatures)
+    lowest = min(temperatures)
+
+    if highest == first_temp: return 0
+
+    else: return highest - lowest
 
 
 def population_projection(initial_population, growth_rate, years):
