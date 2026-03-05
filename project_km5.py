@@ -33,7 +33,15 @@ def window_sums(values, window_size):
     a list of length n - k + 1 where the i-th value is the sum of
     values[i : i + k].
     """
-    pass
+    res = []
+
+    for i in range(len(values)):
+        sum_of_vals = sum(values[i:i+window_size])
+        if len(values[i:i+window_size]) == window_size:
+            res.append(sum_of_vals)
+
+    return res
+print(window_sums([3, -2, 7, -5, 4], 3))
     
 
 def spam_filter_stats(prevalence, sensitivity, specificity):
