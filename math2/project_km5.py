@@ -21,7 +21,13 @@ def breakeven_point(cost_A_params, cost_B_params):
                Returns -1.0 if the marginal costs are equal (parallel lines).
     """
 
-    pass
+    fixed_A, marginal_A = cost_A_params
+    fixed_B, marginal_B = cost_B_params
+
+    if marginal_A == marginal_B:
+        return -1
+
+    return (fixed_A - fixed_B) / (marginal_B - marginal_A)
 
 breakeven_point((50, 5), (100, 3))
 
