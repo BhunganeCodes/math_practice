@@ -151,7 +151,9 @@ def months_to_repay_loan(balance, monthly_payment):
     Return the smallest integer number of whole months needed to reduce
     the balance to 0 or below.
     """
-    pass
+    import math
+
+    return math.ceil(balance / monthly_payment)
 
 
 def validate_schedule(tasks, time_limit, energy_limit):
