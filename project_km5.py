@@ -41,7 +41,6 @@ def window_sums(values, window_size):
             res.append(sum_of_vals)
 
     return res
-print(window_sums([3, -2, 7, -5, 4], 3))
     
 
 def spam_filter_stats(prevalence, sensitivity, specificity):
@@ -71,13 +70,18 @@ def spam_filter_stats(prevalence, sensitivity, specificity):
 
     Return a dictionary with keys "tp", "fn", "tn", "fp", and "ppv".
     """
+    tp = prevalence * sensitivity
+    fn = prevalence * (1 - sensitivity)
+    tn = (1 - prevalence) * specificity
+    fp = (1 - prevalence) * (1 - specificity)
+    ppv = tp / (tp + fp)
 
     return {
-        "tp": 0,
-        "fn": 0,
-        "tn": 0,
-        "fp": 0,
-        "ppv": 0
+        "tp": round(tp, 3),
+        "fn": round(fn, 3),
+        "tn": round(tn, 3),
+        "fp": round(fp, 3),
+        "ppv": round(ppv, 3)
     }
 
 
