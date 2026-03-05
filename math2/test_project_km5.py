@@ -1,5 +1,5 @@
 import unittest
-from math2.project_km5 import *
+from project_km5 import *
 
 
 class TestProjectKM5(unittest.TestCase):

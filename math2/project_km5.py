@@ -29,7 +29,6 @@ def breakeven_point(cost_A_params, cost_B_params):
 
     return (fixed_A - fixed_B) / (marginal_B - marginal_A)
 
-breakeven_point((50, 5), (100, 3))
 
 def net_flow_accumulation(flow_rate_coefficients, time_start, time_end):
     """
@@ -54,6 +53,11 @@ def net_flow_accumulation(flow_rate_coefficients, time_start, time_end):
     # The antiderivative F(t) is (a/3)*t^3 + (b/2)*t^2 + c*t
     # Result is F(time_end) - F(time_start)
 
-    pass
+    a, b, c = flow_rate_coefficients
+
+    def F(t):
+        return (a/3)*t**3 + (b/2)*t**2 + c*t
+    
+    return F(time_end) - F(time_start)
 
 net_flow_accumulation([50, -20, 5], 1, 3)
