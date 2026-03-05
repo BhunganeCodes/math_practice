@@ -171,4 +171,21 @@ def validate_schedule(tasks, time_limit, energy_limit):
 
     Return True if the tasks are feasible within the given limits, else False.
     """
-    pass
+    for t in tasks:
+        duration, energy = t
+        time_limit -= duration
+        energy_limit -= energy
+
+        if time_limit <= 0 or energy_limit <= 0:
+            return False
+        
+    return True
+
+validate_schedule(
+                [
+                    (2, 3.0),
+                    (1, 1.5),
+                ],
+                4,
+                5.0,
+            )
