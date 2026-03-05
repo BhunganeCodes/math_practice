@@ -94,7 +94,7 @@ def shared_items(list_a, list_b):
     and may be returned in any order.
     """
 
-    pass
+    return set(list_a) & set(list_b) if set(list_a) & set(list_b) else []
 
 
 def max_temperature_rise(temperatures):
